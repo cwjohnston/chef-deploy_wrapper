@@ -23,6 +23,7 @@ define :deploy_wrapper, :owner => 'root', :group => 'root', :sloppy => false do
         end
 
         template "#{params[:ssh_key_dir]}/#{params[:name]}_deploy_key" do
+            cookbook 'deploy_wrapper'
             source "ssh_deploy_key.erb"
             params[:owner]
             params[:group]
@@ -31,6 +32,7 @@ define :deploy_wrapper, :owner => 'root', :group => 'root', :sloppy => false do
         end
 
         template "#{params[:ssh_wrapper_dir]}/#{params[:name]}_deploy_wrapper.sh" do
+            cookbook 'deploy_wrapper'
             source "ssh_wrapper.sh.erb"
             params[:owner]
             params[:group]
