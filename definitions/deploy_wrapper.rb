@@ -6,7 +6,7 @@ define :deploy_wrapper, :owner => 'root', :group => 'root', :sloppy => false do
         ssh_key_dir \
         ssh_key_data"
         
-        Chef::Error.fatal(error_msg)
+        Chef::Log.fatal(error_msg)
         raise
     else
         directory params[:ssh_key_dir] do
