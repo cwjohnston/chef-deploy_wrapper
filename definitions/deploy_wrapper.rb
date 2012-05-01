@@ -10,14 +10,14 @@ define :deploy_wrapper, :owner => 'root', :group => 'root', :sloppy => false do
         raise
     else
         directory params[:ssh_key_dir] do
-            params[:owner]
-            params[:group]
+            owner params[:owner]
+            group params[:group]
             mode 0640
         end
 
         directory params[:ssh_wrapper_dir] do
-            params[:owner]
-            params[:group]
+            owner params[:owner]
+            group params[:group]
             mode 0750
             recursive true
         end
@@ -25,8 +25,8 @@ define :deploy_wrapper, :owner => 'root', :group => 'root', :sloppy => false do
         template "#{params[:ssh_key_dir]}/#{params[:name]}_deploy_key" do
             cookbook 'deploy_wrapper'
             source "ssh_deploy_key.erb"
-            params[:owner]
-            params[:group]
+            owner params[:owner]
+            group params[:group]
             mode 0600
             variables({ :ssh_key_data => params[:ssh_key_data] })
         end
@@ -34,8 +34,8 @@ define :deploy_wrapper, :owner => 'root', :group => 'root', :sloppy => false do
         template "#{params[:ssh_wrapper_dir]}/#{params[:name]}_deploy_wrapper.sh" do
             cookbook 'deploy_wrapper'
             source "ssh_wrapper.sh.erb"
-            params[:owner]
-            params[:group]
+            owner params[:owner]
+            group params[:group]
             mode 0755
             variables({
                 :ssh_key_dir => params[:ssh_key_dir],
