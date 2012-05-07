@@ -27,7 +27,7 @@ Usage example
 =============
 
     include_recipe 'deploy_wrapper'
-    
+
     deploy_wrapper 'myapp' do
         owner 'root'
         group 'root'
@@ -46,7 +46,7 @@ Usage example
 License and Author
 ==================
 
-Author:: Cameron Johnston <cwjohnston@gmail.com>
+Author:: Cameron Johnston <cameron@rootdown.net>
 
 Copyright:: 2012, Cameron Johnston
 
