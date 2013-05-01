@@ -12,7 +12,7 @@ define :deploy_wrapper, :owner => 'root', :group => 'root', :sloppy => false do
         directory params[:ssh_key_dir] do
             owner params[:owner]
             group params[:group]
-            mode 0640
+            mode 0740
             recursive true
         end
 
