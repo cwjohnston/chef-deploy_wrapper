@@ -1,3 +1,7 @@
+## v0.1.0:
+
+* Version bump with no code changes to address bad upload of previous version. Please do not use 0.0.3 from the community site.
+
 ## v0.0.3:
 
 * set cookbook name in metadata (thanks mikedillion)
