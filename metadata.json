@@ -1,0 +1,29 @@
+{
+  "name": "deploy_wrapper",
+  "description": "Provides a definition that sets up an ssh key and ssh wrapper script for use with deploy or deploy_revision resources",
+  "long_description": "",
+  "maintainer": "Cameron Johnston",
+  "maintainer_email": "cameron@rootdown.net",
+  "license": "none",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0"
+}
