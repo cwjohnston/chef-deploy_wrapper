@@ -6,9 +6,11 @@ The `deploy_wrapper` cookbook provides a definition that sets up an ssh key and 
 Parameters
 ==========
 
-* `ssh_wrapper_dir` - the ssh wrapper script will be written to this directory, required.
-* `ssh_key_dir` - the ssh key file will be written to this directory, required.
-* `ssh_key_data` - the private key data to write into the ssh key file, required.
+* `ssh_wrapper_path` - final path for your ssh wrapper script.
+* `ssh_wrapper_dir` - the ssh wrapper script will be written to this directory.
+* `ssh_key_file` - key file to use.
+* `ssh_key_dir` - the ssh key file will be written to this directory.
+* `ssh_key_data` - the private key data to write into the ssh key file, this override `ssh_key_file`.
 * `owner` - the owner for ssh wrapper and key files, defaults to 'root'
 * `group` - the group ownership for ssh wrapper and key files, defaults to 'root'
 * `sloppy` - a boolean which toggles whether or not the ssh wrapper script will attempt to validate the repo's ssh key. This parameter defaults to `false`, but the default setting will probably cause problems when executing deploy resources if `~/.ssh/known_hosts` has not been pre-populated manually or via another cookbook.
