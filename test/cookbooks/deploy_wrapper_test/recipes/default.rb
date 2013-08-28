@@ -33,6 +33,6 @@ deploy_revision '/opt/dw_cookbook' do
   revision 'master'
   repo node['deploy_wrapper_test']['repo']
   ssh_wrapper '/opt/dw_cookbook/shared/dw_cookbook_deploy_wrapper.sh'
-  symlink_before_migrate {}
-  symlinks {}
+  symlink_before_migrate.clear
+  symlinks.clear
 end
