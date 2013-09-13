@@ -10,13 +10,15 @@ action :create do
     group new_resource.group
     mode "0740"
     recursive true
+    not_if { ::Dir.exists?(new_resource.ssh_wrapper_dir) }
   end
 
   directory new_resource.ssh_wrapper_dir do
     owner new_resource.owner
     group new_resource.group
-    mode "0755" unless ::Dir.exists?(new_resource.ssh_wrapper_dir)
+    mode "0755"
     recursive true
+    not_if { ::Dir.exists?(new_resource.ssh_wrapper_dir) }
   end
 
   file key_path do
