@@ -1,3 +1,9 @@
+use_inline_resources
+
+def whyrun_supported?
+   true
+end
+
 action :create do
   directory new_resource.ssh_key_dir do
     owner new_resource.owner
