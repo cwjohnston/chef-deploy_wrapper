@@ -1,14 +1,14 @@
 use_inline_resources
 
 def whyrun_supported?
-   true
+  true
 end
 
 action :create do
   directory new_resource.ssh_key_dir do
     owner new_resource.owner
     group new_resource.group
-    mode "0740"
+    mode '0740'
     recursive true
     not_if { ::Dir.exists?(new_resource.ssh_wrapper_dir) }
   end
@@ -16,7 +16,7 @@ action :create do
   directory new_resource.ssh_wrapper_dir do
     owner new_resource.owner
     group new_resource.group
-    mode "0755"
+    mode '0755'
     recursive true
     not_if { ::Dir.exists?(new_resource.ssh_wrapper_dir) }
   end
@@ -24,16 +24,16 @@ action :create do
   file key_path do
     owner new_resource.owner
     group new_resource.group
-    mode "0600"
+    mode '0600'
     content new_resource.ssh_key_data if new_resource.ssh_key_data
   end
 
   template wrapper_path do
     cookbook 'deploy_wrapper'
-    source "ssh_wrapper.sh.erb"
+    source 'ssh_wrapper.sh.erb'
     owner new_resource.owner
     group new_resource.group
-    mode "0755"
+    mode '0755'
     variables(
       :ssh_key_path => key_path,
       :app_name => new_resource.application,
@@ -61,8 +61,8 @@ def key_path
 end
 
 def wrapper_path
-  if new_resource.ssh_wrapper_path 
-    return new_resource.ssh_wrapper_path 
+  if new_resource.ssh_wrapper_path
+    return new_resource.ssh_wrapper_path
   elsif new_resource.ssh_wrapper_dir
     return ::File.join(new_resource.ssh_wrapper_dir, "#{new_resource.application}_deploy_wrapper.sh")
   else
