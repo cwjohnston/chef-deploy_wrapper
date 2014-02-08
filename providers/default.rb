@@ -36,7 +36,6 @@ action :create do
     mode '0755'
     variables(
       :ssh_key_path => key_path,
-      :app_name => new_resource.application,
       :sloppy => new_resource.sloppy
     )
   end
