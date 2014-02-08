@@ -5,7 +5,8 @@ def whyrun_supported?
 end
 
 action :create do
-  directory new_resource.ssh_key_dir do
+  directory "#{new_resource.application}_#{new_resource.ssh_key_dir}" do
+    path new_resource.ssh_key_dir
     owner new_resource.owner
     group new_resource.group
     mode '0740'
@@ -13,7 +14,8 @@ action :create do
     not_if { ::Dir.exists?(new_resource.ssh_wrapper_dir) }
   end
 
-  directory new_resource.ssh_wrapper_dir do
+  directory "#{new_resource.application}_#{new_resource.ssh_wrapper_dir}" do
+    path new_resource.ssh_wrapper_dir
     owner new_resource.owner
     group new_resource.group
     mode '0755'
