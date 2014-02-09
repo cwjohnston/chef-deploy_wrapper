@@ -11,7 +11,7 @@ action :create do
     group new_resource.group
     mode '0740'
     recursive true
-    not_if { ::Dir.exists?(new_resource.ssh_wrapper_dir) }
+    not_if { ::Dir.exists?(new_resource.ssh_key_dir) }
   end
 
   directory "#{new_resource.application}_#{new_resource.ssh_wrapper_dir}" do
