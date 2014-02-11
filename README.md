@@ -1,9 +1,10 @@
 Description
 ===========
 
-The `deploy_wrapper` cookbook provides a definition that sets up an ssh key and ssh wrapper script for use with `deploy` or `deploy_revision` resources.
+The `deploy_wrapper` cookbook provides a lightweight resource provider which sets up an ssh key and ssh wrapper script for
+use with `deploy` or `deploy_revision` resources.
 
-Parameters
+Attributes
 ==========
 
 * `ssh_wrapper_path` - final path for your ssh wrapper script.
@@ -49,6 +50,7 @@ License and Author
 ==================
 
 Author:: Cameron Johnston <cameron@rootdown.net>
+Author:: Guilhem Lettron <guilhem@lettron.fr>
 
 Copyright:: 2012, Cameron Johnston
 

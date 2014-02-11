@@ -1,3 +1,7 @@
+## v0.2.0:
+
+* Complete rewrite from definiton to LWRP, courtesy Guilhem Lettron
+
 ## v0.1.0:
 
 * Version bump with no code changes to address bad upload of previous version. Please do not use 0.0.3 from the community site.
