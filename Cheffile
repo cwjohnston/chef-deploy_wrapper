@@ -1,0 +1,7 @@
+site 'https://supermarket.getchef.com/api/v1'
+
+cookbook 'deploy_wrapper', :path => '.'
+cookbook 'deploy_wrapper_test', :path => './test/cookbooks/deploy_wrapper_test'
+cookbook 'apt'
+cookbook 'yum', '~> 2.0'
+
