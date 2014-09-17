@@ -1,7 +1,8 @@
 ---
-driver_plugin: vagrant
+driver_plugin: docker
 driver_config:
   require_chef_omnibus: true
+  socket: <%= ENV['DOCKER_HOST'] %>
 
 platforms:
 <% %w(11.8.0 10.28.0).each do |chef_version| %>
